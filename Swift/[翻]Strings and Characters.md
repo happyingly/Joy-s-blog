@@ -1,6 +1,8 @@
-**string** 是一个有序的字符集合，例如 "hello, world", "albatross"。Swift 字符串通过 **String** 类型来表示，也可以表示为 **Character** 类型的值的结合。
+###Strings and Characters
 
-Swift 的 **String** 和 **Character** 类型提供了一个快速的，兼容 Unicode 的方式来处理代码中的文本信息。创建和操作字符串的语法与 C的操作方式相似，轻量并且易读。String 连接操作只需要简单地通过 `+` 号将两个字符串相连即可。与Swift中其他值一样，是否可更改字符串的值，取决于其被定义为常量还是变量。
+**String** 是一个有序的字符集合，例如 "hello, world", "albatross"。Swift 字符串通过 **String** 类型来表示，也可以表示为 **Character** 类型值的结合。
+
+Swift 的 **String** 和 **Character** 类型提供了一个快速的，兼容 Unicode 的方式来处理代码中的文本信息。创建和操作字符串的语法与 C的操作方式相似，轻量并且易读。字符串连接操作只需要简单地通过 `+` 号将两个字符串相连即可。与 Swift 中其他值一样，是否可更改字符串的值，取决于其被定义为常量还是变量。
 
 尽管语法简易，但 **String** 类型是一种快速、现代化的字符串实现。每一个字符串都是由独立编码的 Unicode 字符组成，并提供了在多种 Unicode 声明中访问这些字符的支持。
 
