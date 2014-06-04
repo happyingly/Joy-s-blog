@@ -14,7 +14,7 @@ Swift 的 **String** 和 **Character** 类型提供了一个快速的，兼容 U
 >
 >更多关于在 Foundation 和 Cocoa 中使用 **String** 的信息请查看 [Using Swift with Cocoa and Objective-C](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/index.html#//apple_ref/doc/uid/TP40014216)。
 
-##### 字符串字面量
+#### 字符串字面量
 
 您可以在您的代码中包含一段预定义的字符串值作为字符串字面量。字符串字面量是由双引号包裹着的具有固定顺序的文本字符集。
 
@@ -45,7 +45,7 @@ let blackHeart = "\u2665"      // ♥,  Unicode scalar U+2665
 let sparklingHeart = "\U0001F496"  // 💖, Unicode scalar U+1F496
 ```
 
-##### 初始化空字符串
+#### 初始化空字符串
 
 为了构造一个很长的字符串，可以创建一个空字符串作为起点。可以将空的字符串字面量赋值给变量，也可以初始化一个新的 **String** 实例：
 
@@ -64,7 +64,7 @@ if emptyString.isEmpty {
 // 打印 "Nothing to see here"
 ```
 
-##### 字符串可变性
+#### 字符串可变性
 
 您可以通过将一个特定字符串分配给一个变量来对其进行修改，或者分配给一个常量来保证其不会被修改：
 
@@ -81,7 +81,7 @@ constantString += " and another Highlander"
 >
 > 在 Objective-C 和 Cocoa 中，您通过选择两个不同的类( NSString 和 NSMutableString )来指定该字符串是否是否可以被修改，Swift中的则仅通过定义变量或者常量来决定，实现了多种类型可变性操作的统一。
 
-##### 字符串是值类型
+#### 字符串是值类型
 
 Swift 的 **String** 类型是值类型。如果您创建了一个新的字符串，那么当其进行常量、变量赋值操作或在函数/方法中传递时，会进行值拷贝。任何情况下，都会对已有字符串值创建新副本，并对该新副本进行传递或赋值。值类型在 [Structures and Enumerations Are Value Types](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_104) 中进行了说明。
 
@@ -93,7 +93,7 @@ Swift 默认字符串拷贝的方式保证了在函数/方法中传递的时字�
 
 在实际编译时，Swift编译器会优化字符串的使用，使实际的复制只发生在绝对必要的情况下，这意味着您始终可以将字符串作为值类型的同时获得极高的性能。
 
-##### 使用字符(Characters)
+#### 使用字符(Characters)
 
 Swift 的 **String** 类型表示特定序列的字符值的集合。每一个字符值代表一个 Unicode 字符。您可利用 for-in 循环来遍历字符串中的每一个字符：
 
@@ -116,7 +116,7 @@ for-in 循环在[For Loops](https://developer.apple.com/library/prerelease/ios/d
 let yenSign: Character = "¥"
 ```
 
-##### 计算字符数量
+#### 计算字符数量
 
 通过调用全局 `countElements` 函数并将字符串作为参数进行传递可以获取该字符串的字符数量。
 
@@ -132,7 +132,7 @@ println("unusualMenagerie has \(countElements(unusualMenagerie)) characters")
 >
 >另外需要注意的是通过 `countElements` 返回的字符数量并不总是与包含相同字符的 NSString 的 `length` 属性相同。NSString 的 `length` 属性是基于利用utf-16表示的十六位代码单元数字，而不是基于 Unicode 字符。为了解决这个问题，NSString 的 `length` 属性在被 Swift的 **String** 访问时被成为 `utf16count`
 
-##### Concatenating Strings and Characters
+#### Concatenating Strings and Characters
 
 字符串和字符的值可以通过加法运算法 (+) 相加在一起并创建一个新的字符串值：
 
@@ -164,7 +164,7 @@ welcome += character1
 >
 >您不能将一个字符串或者字符添加到一个已经存在的字符变量上，因为字符变量只能包含一个字符。
 
-##### 字符串插值
+#### 字符串插值
 
 字符串插值是一种全新的构建字符串的方式，可以在其中包含常量、变量、字面量和表达式。您插入的字符串字面量的每一项都被包裹在以反斜线为前缀的圆括号中：
 
@@ -182,7 +182,7 @@ let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
 >
 >您插值字符串中写在括号中的表达式不能包含非转义双引号 (") 和反斜杠 (\\)，并且不能包含回车或换行符。
 
-##### 比较字符串
+###### 比较字符串
 
 Swift 提供了三种方式来比较字符串的值：字符串相等，前缀相等和后缀相等。
 
@@ -234,7 +234,7 @@ println("There are \(act1SceneCount) scenes in Act 1")
 // prints "There are 5 scenes in Act 1"
 ```
 
-###### 大写和小谢字符串
+###### 大写和小写字符串
 
 您可以通过字符串的 `uppercaseString` 和 `lowercaseString` 属性来访问一个字符串的大写/小写版本。
 
@@ -246,9 +246,92 @@ let whispered = normal.lowercaseString
 // whispered is equal to "could you help me, please?"
 ```
 
+#### Unicode
 
+Unicode 是文本编码和表示的国际标准。它使您可以用标准格式表示来自任意语言几乎所有的字符，并能够对文本文件或网络这样的外部资源中的字符进行读写操作。
 
+Swift 的字符串和字符类型是完全兼容 Unicode 的，它支持如下所述的一系列不同的 Unicode 编码。
 
+###### Unicode Terminology
 
+Unicode 中每一个字符都可以被解释为一个或多个 unicode 标量。字符的 unicode 标量是一个唯一的21位数字(和名称)，例如 `U+0061` 表示小写的拉丁字母A ("a")，`U+1F425` 表示正面站立的鸡宝宝 ("🐥")
 
+当 Unicode 字符串被写进文本文件或其他存储结构当中，这些 unicode 标量将会按照 Unicode 定义的集中格式之一进行编码。其包括 `UTF-8` (以8位代码单元进行编码) 和 `UTF-16` (以16位代码单元进行编码)。
+
+###### 字符串的 Unicode 表示
+
+Swift 提供了几种不同的方式来访问字符串的 Unicode 表示。
+
+您可以利用 `for-in` 来对字符串进行遍历，从而以 Unicode 字符的方式访问每一个字符值。该过程在 [Working with Characters](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-XID_376) 中进行了描述。
+
+另外，能够以其他三种 Unicode 兼容的方式访问字符串的值：
+
+*	UTF-8 代码单元集合 (利用字符串的 utf8 属性进行访问)
+*	UTF-16 代码单元集合 (利用字符串的 utf16 属性进行访问)
+*	21位的 Unicode 标量值集合 (利用字符串的 unicodeScalars 属性进行访问)
+
+下面由 `D` `o` `g` `!` 和 `🐶` (狗脸表情，Unicode 标量为 `U+1F436`)组成的字符串中的每一个字符代表着一种不同的表示：
+
+```
+let dogString = "Dog!🐶"
+```
+
+###### UTF-8
+
+您可以通过遍历字符串的 `utf8` 属性来访问它的 `UTF-8` 表示。其为 **UTF8View** 类型的属性，**UTF8View** 是无符号8位 (`UInt8`) 值的集合，每一个 `UIn8` 都是一个字符的 UTF-8 表示：
+
+```
+for codeUnit in dogString.utf8 {
+    print("\(codeUnit) ")
+}
+print("\n")
+// 68 111 103 33 240 159 144 182
+```
+
+上面的例子中，前四个10进制代码单元值 (68, 111, 103, 33) 代表了字符 `D` `o` `g` 和 `!` ，他们的 UTF-8 表示与 ASCII 表示相同。后四个代码单元值 (240, 159, 144, 182) 是 `狗脸表情` 的4位 UTF-8 表示。
+
+###### UTF-16
+
+您可以通过遍历字符串的 `utf16` 属性来访问它的 `UTF-16` 表示。其为 **UTF16View** 类型的属性，**UTF16View** 是无符号16位 (`UInt16`) 值的集合，每一个 `UInt16` 都是一个字符的 UTF-16 表示：
+
+```
+for codeUnit in dogString.utf16 {
+    print("\(codeUnit) ")
+}
+print("\n")
+// 68 111 103 33 55357 56374
+```
+
+同样，前四个代码单元值 (68, 111, 103, 33) 代表了字符 `D` `o` `g` 和 `!` ，他们的 UTF-16 代码单元和 UTF-8 完全相同。
+
+第五和第六个代码单元值 (55357 and 56374) 是 `狗链表情` 字符的UTF-16 表示。第一个值为 `U+D83D` (十进制值为 55357)，第二个值为 `U+DC36` (十进制值为 56374)。
+
+###### Unicode 标量 (Scalars)
+
+您可以通过遍历字符串的 `unicodeScalars` 属性来访问它的 Unicode 标量表示。其为 **UnicodeScalarView** 类型的属性， **UnicodeScalarView** 是 `UnicodeScalar` 的集合。`UnicodeScalar` 是21位的 Unicode 代码点。
+
+每一个 `UnicodeScalar` 拥有一个值属性，可以返回对应的21位数值，用 `UInt32` 位值来表示。
+
+```
+for scalar in dogString.unicodeScalars {
+    print("\(scalar.value) ")
+}
+print("\n")
+// 68 111 103 33 128054
+```
+
+同样，前四个代码单元值 (68, 111, 103, 33) 代表了字符 `D` `o` `g` 和 `!` 。第五位数值，128054，是一个十六进制1F436的十进制表示。其等同于 `狗脸表情` 的Unicode 标量 U+1F436。
+
+作为查询字符值属性的一种替代方法，每个 `UnicodeScalar` 值也可以用来构建一个新的字符串值，比如在字符串插值中使用：
+
+```
+for scalar in dogString.unicodeScalars {
+    println("\(scalar) ")
+}
+// D
+// o
+// g
+// !
+// 🐶
+```
 
