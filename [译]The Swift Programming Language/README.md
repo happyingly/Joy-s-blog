@@ -7,8 +7,8 @@ The Swift Programming Language中文翻译
 #####A Swift Tour 	（已翻译：01.[译]Swift入门引导）
 ###Language Guide
 #####The Basics 		（已翻译：02.[译]Swift语法(一)基础）
-#####Basic Operators
-#####String and Characters
+#####Basic Operators 	（已翻译：03.[译]Swift语法(二)基本运算符）
+#####String and Characters（已翻译：04.[译]Swift语法(三)字符串和字符）由@wh1100717翻译
 #####Collection Type
 #####Control Flow
 #####Functions
