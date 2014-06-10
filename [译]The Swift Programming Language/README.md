@@ -19,7 +19,7 @@ The Swift Programming Language中文翻译
 #####The Basics 		（已翻译：02.[译]Swift语法(一)基础）
 #####Basic Operators 	（已翻译：03.[译]Swift语法(二)基本运算符）
 #####String and Characters（已翻译：04.[译]Swift语法(三)字符串和字符）由@wh1100717翻译
-#####Collection Type
+#####Collection Type(已翻译：05.[译]Swift语法(四)集合类型）
 #####Control Flow
 #####Functions
 #####Closures
